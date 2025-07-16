@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@font-face {
+  font-family: Moonblossom;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/external/fonts/MOONBLOSSOM\ Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: FinalSix Book;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/external/fonts/FinalSix\ Book.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: RooneySans Regular;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/external/fonts/RooneySans\ Regular.ttf") format("truetype");
+}
+
+@theme {
+  --font-logotype: "Moonblossom", sans-serif;
+  --font-header: "FinalSix Book", sans-serif;
+  --font-body: "RooneySans Regular", sans-serif;
+
+  --text-logotype: 120px;
+  --text-header: 110px;
+  --text-subheader: 95px;
+  --text-body: 48px;
+
+  --color-drawn-black:#011627;
+  --color-drawn-bg:#253845;
+  --color-drawn-white:#FDFFFC;
+  --color-drawn-cyan:#2EC4B6;
+  --color-drawn-magenta:#E81E65;
+  --color-drawn-orange:#FF9F1C;
+
+  --drop-shadow-main: 4px 4px rgba(0, 0, 0, 0.25); 
+
+}
