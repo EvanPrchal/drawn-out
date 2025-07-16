@@ -1,3 +1,4 @@
+import Navbar from "./Navbar";
 import HomeP1 from "./HomeP1";
 import HomeP2 from "./HomeP2";
 function App() {
@@ -11,6 +12,7 @@ function App() {
   }
   return (
     <div>
+      <Navbar />
       <HomeP1 logoColor={logoColor} />
       <HomeP2 logoColor={logoColor} />
     </div>

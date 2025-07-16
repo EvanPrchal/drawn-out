@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
 import Button from "./Button";
 import Logo from "./Logo";
-
 type HomeP1Props = {
   logoColor: string;
 };
@@ -18,8 +18,10 @@ const HomeP1: React.FC<HomeP1Props> = ({ logoColor }) => {
             <p className="font-body text-body">The most outstanding drawing application</p>
             <button className="flex font-body justify-start text-[40px]">
               <section className="flex items-center gap-5">
-                <Button text="LOGIN" buttonColor="bg-drawn-white" textColor="text-drawn-bg" />
-                <Button text="SIGN UP" buttonColor="bg-drawn-bg" textColor="text-drawn-white" />
+                <Link to={"login"}>
+                  <Button text="LOGIN" buttonColor="bg-drawn-white" textColor="text-drawn-bg" borderColor="border-drawn-white" hlColor={logoColor} />
+                </Link>
+                <Button text="SIGN UP" buttonColor="bg-drawn-bg" textColor="text-drawn-white" borderColor="border-drawn-white" hlColor={logoColor} />
               </section>
             </button>
           </section>
