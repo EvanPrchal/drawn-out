@@ -15,13 +15,21 @@ const HomeP1: React.FC<HomeP1Props> = ({ logoColor }) => {
           <h2 className="text-header -mb-10 text-nowrap">Welcome to</h2>
           <Logo logoColor={logoColor} />
           <section className="flex flex-col justify-between gap-20">
-            <p className="font-body text-body">The most outstanding drawing application</p>
+            <p className="font-body text-body">Draw your heart out~</p>
             <button className="flex font-body justify-start text-[40px]">
               <section className="flex items-center gap-5">
                 <Link to={"login"}>
                   <Button text="LOGIN" buttonColor="bg-drawn-white" textColor="text-drawn-bg" borderColor="border-drawn-white" hlColor={logoColor} />
                 </Link>
-                <Button text="SIGN UP" buttonColor="bg-drawn-bg" textColor="text-drawn-white" borderColor="border-drawn-white" hlColor={logoColor} />
+                <Link to={"signup"}>
+                  <Button
+                    text="SIGN UP"
+                    buttonColor="bg-drawn-bg"
+                    textColor="text-drawn-white"
+                    borderColor="border-drawn-white"
+                    hlColor={logoColor}
+                  />
+                </Link>
               </section>
             </button>
           </section>

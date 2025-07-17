@@ -18,12 +18,14 @@ const Login: React.FC = () => {
           onChange={(e) => setUser(e.target.value)}
           placeholder="USERNAME"
           className="border-2 border-[#e1e1e1] rounded-full p-[3.5%] px-[7.5%] w-2xl"
+          required
         />
         <input
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           placeholder="PASSWORD"
           className="border-2 border-[#e1e1e1] rounded-full p-[3.5%] px-[7.5%] mb-[7.5%]"
+          required
         />
         <div className="flex self-center mb-[10%]">
           <Button
