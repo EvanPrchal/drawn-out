@@ -22,7 +22,7 @@ const HomeP2: React.FC<HomeP2Props> = ({ logoColor }) => {
             className="text-header font-header text-[#211730] text-center w-full"
           ></img>
           <section className="text-left flex flex-col justify-center w-full">
-            <h2 className="text-header font-header text-drawn-white text-left">What is DRAWNOUT?</h2>
+            <h2 className="text-header font-header text-drawn-white text-left">What is DrawnOut?</h2>
             <p className="text-body font-body text-drawn-white text-left">
               DrawnOut is a minimalist, community based art application inspired by the likes of Flipnote Hatena, Newgrounds, Skribbl.io, and MsPaint.
             </p>

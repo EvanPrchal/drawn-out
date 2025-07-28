@@ -1,7 +1,10 @@
 const Navbar = () => {
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "20%";
+  }
   return (
-    <nav className="bg-drawn-black flex sticky top-0 p-[1%] -mx-[25%] justify-around">
-      <img src="/options.svg" className="max-w-[2.25vw]" />
+    <nav className="bg-drawn-black flex sticky top-0 p-[1.5%] max-w-screen justify-between">
+      <img src="/options.svg" id="mySidenav" onClick={openNav} className="max-w-[2.25vw] z-10" />
       <input
         type="search"
         placeholder=""

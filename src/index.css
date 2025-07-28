@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 @import "tailwindcss";
+
 @font-face {
   font-family: Moonblossom;
   font-style: normal;
@@ -27,6 +29,7 @@
   --font-logotype: "Moonblossom", sans-serif;
   --font-header: "FinalSix Book", sans-serif;
   --font-body: "RooneySans Regular", sans-serif;
+  --font-sidebar: "Figtree", sans-serif;
 
   --text-logotype: 120px;
   --text-header: 110px;
