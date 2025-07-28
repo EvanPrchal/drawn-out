@@ -1,4 +1,4 @@
-import SidebarButton from "./SidebarButton";
+import SidebarButton from "./Components/SidebarButton";
 
 const Sidebar = () => {
   //mt-41%

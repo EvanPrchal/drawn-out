@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "./Button";
+import Button from "./Components/Button";
 import { Link } from "react-router-dom";
 const Login: React.FC = () => {
   const [user, setUser] = useState("");
@@ -33,7 +33,7 @@ const Login: React.FC = () => {
             textColor="text-drawn-white"
             buttonColor="bg-drawn-magenta"
             borderColor="border-drawn-magenta"
-            hlColor="hover:bg-drawn-cyan "
+            hlColor="hover:text-drawn-magenta hover:bg-drawn-white"
           />
         </div>
       </form>

@@ -2,12 +2,27 @@ import { ReactSketchCanvas, type ReactSketchCanvasRef } from "react-sketch-canva
 import { useRef, useState } from "react";
 
 const Sketch = () => {
+  //VERY messy/long code ahead, was more focused on making this part actually work than cleanliness or neatness
   const canvasRef = useRef<ReactSketchCanvasRef>(null);
   const [strokeColor, setStrokeColor] = useState("#000000");
   const [canvasColor, setCanvasColor] = useState("#ffffff");
   const [eraseMode, setEraseMode] = useState(false);
   const [strokeWidth, setStrokeWidth] = useState(5);
   const [eraserWidth, setEraserWidth] = useState(10);
+
+  const handleExportImage = () => {
+    //shoutout this dude for making a video on how to do this: https://www.youtube.com/watch?v=akDObzvMxSI
+    //the docs for this werent making sense but that dude saved me he the goat
+    canvasRef.current?.exportImage("png").then((data) => {
+      console.log(data);
+      const link = document.createElement("a");
+      link.href = data;
+
+      link.download = "canvas.png";
+
+      link.click();
+    });
+  };
 
   const handleStrokeColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setStrokeColor(event.target.value);
@@ -46,7 +61,13 @@ const Sketch = () => {
       <div className="bg-drawn-white flex flex-col justify-around p-5">
         <section className="buttons flex flex-col justify-around h-full">
           <section className="flex gap-5">
-            <input type="image" src="/pencil.svg" className="btn btn-sm btn-outline-primary" disabled={!eraseMode} onClick={handlePenClick}></input>
+            <input
+              type="image"
+              src="/pencil.svg"
+              className="btn btn-sm btn-outline-primary hover:cursor-pointer"
+              disabled={!eraseMode}
+              onClick={handlePenClick}
+            ></input>
             <input
               disabled={eraseMode}
               type="range"
@@ -60,7 +81,13 @@ const Sketch = () => {
             />
           </section>
           <section className="flex gap-5">
-            <input type="image" src="/erase.svg" className="btn btn-sm btn-outline-primary" disabled={eraseMode} onClick={handleEraserClick}></input>
+            <input
+              type="image"
+              src="/erase.svg"
+              className="btn btn-sm btn-outline-primary hover:cursor-pointer"
+              disabled={eraseMode}
+              onClick={handleEraserClick}
+            ></input>
             <input
               disabled={!eraseMode}
               type="range"
@@ -79,9 +106,12 @@ const Sketch = () => {
           </section>
         </section>
         <section className="flex h-full gap-5">
-          <input type="color" className="w-full h-full" value={strokeColor} onChange={handleStrokeColorChange} />
-          <input type="color" className="w-full h-full" value={canvasColor} onChange={handleCanvasColorChange} />
+          <input type="color" className="w-full h-full hover:cursor-pointer" value={strokeColor} onChange={handleStrokeColorChange} />
+          <input type="color" className="w-full h-full hover:cursor-pointer" value={canvasColor} onChange={handleCanvasColorChange} />
         </section>
+        <button className="bg-drawn-black rounded-full text-drawn-white m-[5%] w-[50%] self-center hover:cursor-pointer" onClick={handleExportImage}>
+          Export
+        </button>
       </div>
       <div className="flex justify-center w-full p-[2%] py-[3%]">
         <ReactSketchCanvas ref={canvasRef} strokeColor={strokeColor} canvasColor={canvasColor} strokeWidth={strokeWidth} eraserWidth={eraserWidth} />
