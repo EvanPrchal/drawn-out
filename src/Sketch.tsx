@@ -1,7 +1,7 @@
 import { ReactSketchCanvas, type ReactSketchCanvasRef } from "react-sketch-canvas";
 import { useRef, useState } from "react";
-
-const Sketch = () => {
+import { useLocation } from "react-router-dom";
+const Sketch: React.FC = () => {
   //VERY messy/long code ahead, was more focused on making this part actually work than cleanliness or neatness
   const canvasRef = useRef<ReactSketchCanvasRef>(null);
   const [strokeColor, setStrokeColor] = useState("#000000");
@@ -11,8 +11,6 @@ const Sketch = () => {
   const [eraserWidth, setEraserWidth] = useState(10);
 
   const handleExportImage = () => {
-    //shoutout this dude for making a video on how to do this: https://www.youtube.com/watch?v=akDObzvMxSI
-    //the docs for this werent making sense but that dude saved me he the goat
     canvasRef.current?.exportImage("png").then((data) => {
       console.log(data);
       const link = document.createElement("a");
@@ -55,7 +53,19 @@ const Sketch = () => {
   const handleRedoClick = () => {
     canvasRef.current?.redo();
   };
-
+  const location = useLocation();
+  let prompt = location.state?.prompt;
+  if (prompt) {
+    if (prompt.prompt1) {
+      prompt = prompt.prompt1;
+    } else if (prompt.prompt2) {
+      prompt = prompt.prompt2;
+    } else if (prompt.prompt3) {
+      prompt = prompt.prompt3;
+    } else {
+      prompt = "None";
+    }
+  }
   return (
     <div className="flex text-drawn-black bg-drawn-bg h-screen">
       <div className="bg-drawn-white flex flex-col justify-around p-5">
@@ -113,7 +123,8 @@ const Sketch = () => {
           Export
         </button>
       </div>
-      <div className="flex justify-center w-full p-[2%] py-[3%]">
+      <div className="flex flex-col items-center justify-around gap-[4%] w-full p-[2%] py-[3%]">
+        {prompt && <h1 className="font-header text-2xl text-drawn-white">Prompt: {prompt}</h1>}
         <ReactSketchCanvas ref={canvasRef} strokeColor={strokeColor} canvasColor={canvasColor} strokeWidth={strokeWidth} eraserWidth={eraserWidth} />
       </div>
     </div>

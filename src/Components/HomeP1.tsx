@@ -1,24 +1,10 @@
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import Logo from "./Logo";
-import axios from "axios";
 type HomeP1Props = {
   logoColor: string;
 };
-//       <img src="/external/images/fillerimg.png" alt="WOW LOOK COOL ART WOOOOOW!!!1" className="text-header"></img>
-//        <h1 className="text-header font-header text-[#211730] text-center">WOW LOOK COOL ART WOOOOOW!!!1</h1>
-//  after adding navbar change the m-% to 5 or 6
 const HomeP1: React.FC<HomeP1Props> = ({ logoColor }) => {
-  const url = "https://www.deviantart.com/api/v1/oauth2/browse/popular/";
-
-  axios
-    .get(url)
-    .then((response) => {
-      console.log(response.data.results);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
   return (
     <div className="bg-drawn-bg h-screen">
       <div className="m-[7%]">
@@ -27,7 +13,7 @@ const HomeP1: React.FC<HomeP1Props> = ({ logoColor }) => {
             <h2 className="text-header -mb-10 text-nowrap">Welcome to</h2>
             <Logo logoColor={logoColor} />
             <section className="flex flex-col justify-between gap-20">
-              <p className="font-body text-body">Draw your heart out~</p>
+              <p className="font-body text-body italic">The drawing website for thinking outside of the box</p>
               <div className="flex font-body justify-start text-[40px]">
                 <section className="flex items-center gap-5">
                   <Link to={"login"}>

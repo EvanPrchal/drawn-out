@@ -6,7 +6,7 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState("");
 
   const handleSubmit = () => {
-    alert(`Username is: ${user}\nPass is: ${password}`);
+    alert(`Username is: ${user}\nPassword is: ${password}`);
   };
   return (
     <div className="bg-drawn-white flex flex-col justify-center items-center p-[5%] h-full">

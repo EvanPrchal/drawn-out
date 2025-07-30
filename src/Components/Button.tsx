@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({ text, buttonColor, textColor, borderCol
   }
   return (
     <button
-      className={`${textColor} ${buttonColor} ${borderColor} ${hlColor}  hover:cursor-pointer rounded-full p-1 px-20 border-7 max-w-2xs text-nowrap flex justify-center text-[40px] w-full`}
+      className={`${textColor} ${buttonColor} ${borderColor} ${hlColor}  hover:cursor-pointer rounded-full p-1 px-20 border-7  text-nowrap flex justify-center text-[40px] w-full`}
     >
       {text}
     </button>
