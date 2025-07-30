@@ -3,7 +3,7 @@ import Button from "./Components/Button";
 const Prompts = () => {
   return (
     <div className="flex flex-col justify-around items-center gap-25 h-full  bg-[url(/external/images/background.png)]  p-[6%]">
-      <h1 className="font-header text-body text-drawn-black rounded-full bg-drawn-white p-1 px-20 self-start drop-shadow-main">Prompt Difficulty</h1>
+      <h1 className="font-header text-body text-drawn-black rounded-full bg-drawn-white p-1 px-20 self-start">Prompt Difficulty</h1>
       <section className="flex flex-col justify-around gap-25">
         <Link to={"easy"}>
           <Button

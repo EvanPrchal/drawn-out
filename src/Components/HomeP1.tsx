@@ -11,7 +11,7 @@ const HomeP1: React.FC<HomeP1Props> = ({ logoColor }) => {
         <div className="flex justify-around items-center gap-15">
           <section className="flex flex-col items-start font-header text-drawn-white">
             <h2 className="text-header -mb-10 text-nowrap">Welcome to</h2>
-            <Logo logoColor={logoColor} />
+            <Logo logoColor={logoColor} size="text-logotype" />
             <section className="flex flex-col justify-between gap-20">
               <p className="font-body text-body italic">The drawing website for thinking outside of the box</p>
               <div className="flex font-body justify-start text-[40px]">

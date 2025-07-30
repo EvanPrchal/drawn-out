@@ -9,6 +9,7 @@ function App() {
   } else {
     logoColor = "text-drawn-magenta";
   }
+  logoColor = "text-drawn-magenta";
   return (
     <div className="overflow-x-hidden bg-drawn-bg">
       <HomeP1 logoColor={logoColor} />

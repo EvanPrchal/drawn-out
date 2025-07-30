@@ -125,7 +125,15 @@ const Sketch: React.FC = () => {
       </div>
       <div className="flex flex-col items-center justify-around gap-[4%] w-full p-[2%] py-[3%]">
         {prompt && <h1 className="font-header text-2xl text-drawn-white">Prompt: {prompt}</h1>}
-        <ReactSketchCanvas ref={canvasRef} strokeColor={strokeColor} canvasColor={canvasColor} strokeWidth={strokeWidth} eraserWidth={eraserWidth} />
+        <div className="w-full h-full">
+          <ReactSketchCanvas
+            ref={canvasRef}
+            strokeColor={strokeColor}
+            canvasColor={canvasColor}
+            strokeWidth={strokeWidth}
+            eraserWidth={eraserWidth}
+          />
+        </div>
       </div>
     </div>
   );

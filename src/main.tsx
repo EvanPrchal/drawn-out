@@ -12,7 +12,7 @@ import Prompts from "./Prompts.tsx";
 import Medium from "./Medium.tsx";
 import Easy from "./Easy.tsx";
 import Hard from "./Hard.tsx";
-
+import Settings from "./Settings.tsx";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
@@ -27,6 +27,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/prompts/medium" element={<Medium />}></Route>
         <Route path="/prompts/hard" element={<Hard />}></Route>
         <Route path="/sketch" element={<Sketch />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

@@ -5,7 +5,7 @@ type SidebarButtonProps = {
   title: string;
 };
 const closeNav = () => {
-  document.getElementById("mySidenav").style.width = "0%";
+  document.getElementById("mySidenav")!.style.width = "0%";
 };
 const SidebarButton: React.FC<SidebarButtonProps> = ({ link, svg, title }) => {
   return (
@@ -15,16 +15,16 @@ const SidebarButton: React.FC<SidebarButtonProps> = ({ link, svg, title }) => {
     >
       {link ? (
         <Link to={link}>
-          <div className="flex border-b-1 p-4 w-full">
-            <img src={`/light-${svg}`} className="w-[20%] group-hover:hidden" />
-            <img src={`/dark-${svg}`} className="w-[20%] hidden group-hover:block" />
+          <div className="flex p-4 w-full">
+            <img src={`/light-${svg}`} className="w-20 group-hover:hidden" />
+            <img src={`/dark-${svg}`} className="w-20 hidden group-hover:block" />
             <p className="pl-[10%]">{title}</p>
           </div>
         </Link>
       ) : (
-        <div className="flex border-b-1 p-4 w-full">
-          <img src={`/light-${svg}`} className="w-[20%] group-hover:hidden" />
-          <img src={`/dark-${svg}`} className="w-[20%] hidden group-hover:block" />
+        <div className="flex p-4 w-full">
+          <img src={`/light-${svg}`} className="w-20 group-hover:hidden" />
+          <img src={`/dark-${svg}`} className="w-20 hidden group-hover:block" />
           <p className="pl-[10%]">{title}</p>
         </div>
       )}
