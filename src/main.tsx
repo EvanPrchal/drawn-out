@@ -13,6 +13,9 @@ import Medium from "./Medium.tsx";
 import Easy from "./Easy.tsx";
 import Hard from "./Hard.tsx";
 import Settings from "./Settings.tsx";
+import Gallery from "./Gallery.tsx";
+import SignUp from "./SignUp.tsx";
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
@@ -21,12 +24,14 @@ createRoot(document.getElementById("root")!).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/prompts" element={<Prompts />} />
         <Route path="/prompts/easy" element={<Easy />}></Route>
         <Route path="/prompts/medium" element={<Medium />}></Route>
         <Route path="/prompts/hard" element={<Hard />}></Route>
         <Route path="/sketch" element={<Sketch />} />
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>

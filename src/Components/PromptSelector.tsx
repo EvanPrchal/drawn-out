@@ -6,10 +6,17 @@ type PromptSelectorProps = {
 };
 
 const PromptSelector: React.FC<PromptSelectorProps> = ({ color, prompts }) => {
-  const randomNumber: any = (max: number, min: number, except: number) => {
+  const randomNumber: any = (max: number, min: number, except1: number, except2: number) => {
     let num = Math.floor(Math.random() * (max - min)) + min;
-    return num === except ? randomNumber(max, min, except) : num;
+    return num === except1 || num === except2 ? randomNumber(max, min, except1, except2) : num;
   };
+  const randomIndex1 = randomNumber(0, prompts.length, -1, -2);
+  const randomIndex2 = randomNumber(0, prompts.length, randomIndex1, -1);
+  const randomIndex3 = randomNumber(0, prompts.length, randomIndex2, randomIndex1);
+
+  let prompt1 = prompts[randomIndex1];
+  let prompt2 = prompts[randomIndex2];
+  let prompt3 = prompts[randomIndex3];
 
   let difficulty = "Hard";
   if (color === "cyan") {
@@ -20,13 +27,6 @@ const PromptSelector: React.FC<PromptSelectorProps> = ({ color, prompts }) => {
     difficulty = "Hard";
   }
 
-  const randomIndex1 = randomNumber(0, prompts.length, -1);
-  const randomIndex2 = randomNumber(0, prompts.length, randomIndex1);
-  const randomIndex3 = randomNumber(0, prompts.length, randomIndex2);
-
-  let prompt1 = prompts[randomIndex1];
-  let prompt2 = prompts[randomIndex2];
-  let prompt3 = prompts[randomIndex3];
   return (
     <div className={`bg-[url(/external/images/background.png)] bg-drawn-${color} flex flex-col items-center justify-around gap-25 h-full p-[6%] `}>
       <h1 className={`font-header text-body text-drawn-${color} rounded-full bg-drawn-white p-1 px-20 self-start`}>{difficulty} Prompts</h1>

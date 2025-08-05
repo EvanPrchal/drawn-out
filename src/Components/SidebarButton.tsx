@@ -7,7 +7,15 @@ type SidebarButtonProps = {
 const closeNav = () => {
   document.getElementById("mySidenav")!.style.width = "0%";
 };
+
+let signedIn = false;
+
 const SidebarButton: React.FC<SidebarButtonProps> = ({ link, svg, title }) => {
+  if (link === "profile")
+    if (signedIn === false) {
+      link = "signup";
+      console.log("pp");
+    }
   return (
     <section
       onClick={closeNav}

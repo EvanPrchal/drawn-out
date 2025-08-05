@@ -1,13 +1,44 @@
-import { useEffect, useState } from "react";
 import PromptSelector from "./Components/PromptSelector";
 
+/*
 type mon = {
   species: {
     name: string;
   };
 };
+*/
 
 const Medium = () => {
+  const mediumPrompts: string[] = [
+    "Wizard Kitty",
+    "Treehouse in an Ancient Tree",
+    "Robot Rehydrating",
+    "A Bicycle that's been Locked up",
+    "Serpent Wrapped around Treasure",
+    "A Group of Aliens",
+    "Fox in a Scarf",
+    "A Steampunker",
+    "Peasant",
+    "Vintage Photo",
+    "Dung Beetle",
+    "Kraken",
+    "Mushroom Forest",
+    "A TV Man",
+    "Dog with Butter on its Head",
+    "Field of Sunflowers",
+    "Koi Pond",
+    "Gingerbread House",
+    "World Turtle",
+    "Beautiful Sunset",
+    "Skateboarder Doing a Trick",
+    "Shattered Pair of Goggles",
+    "The Red String of Fate",
+    "Mystic Cave",
+    "Siren at Sea",
+    "An Eclipse",
+  ];
+
+  /*
   const [mediumPrompts, setMediumPrompts] = useState([
     "Wizard Kitty",
     "Treehouse in an Ancient Tree",
@@ -36,6 +67,8 @@ const Medium = () => {
     "Siren at Sea",
     "An Eclipse",
   ]);
+
+  
   useEffect(() => {
     const fetchMon = async () => {
       const dexNum = Math.floor(Math.random() * (151 - 1)) + 1;
@@ -55,6 +88,8 @@ const Medium = () => {
     };
     fetchMon();
   }, []);
+  */
+
   return (
     <div>
       <PromptSelector color="orange" prompts={mediumPrompts} />

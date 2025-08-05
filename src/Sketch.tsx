@@ -1,6 +1,8 @@
 import { ReactSketchCanvas, type ReactSketchCanvasRef } from "react-sketch-canvas";
 import { useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useHotkeys } from "react-hotkeys-hook";
+
 const Sketch: React.FC = () => {
   //VERY messy/long code ahead, was more focused on making this part actually work than cleanliness or neatness
   const canvasRef = useRef<ReactSketchCanvasRef>(null);
@@ -10,6 +12,26 @@ const Sketch: React.FC = () => {
   const [strokeWidth, setStrokeWidth] = useState(5);
   const [eraserWidth, setEraserWidth] = useState(10);
 
+  useHotkeys("ctrl+z, meta+z", (e) => {
+    e.preventDefault(); // Prevent the browser’s default save action
+    handleUndoClick();
+    console.log("undo");
+  });
+
+  useHotkeys("ctrl+y, ctrl+shift+y, meta+y, meta+shift+z", (event) => {
+    event.preventDefault(); // Prevent the browser’s default save action
+    handleRedoClick();
+  });
+
+  useHotkeys("p", (event) => {
+    event.preventDefault(); // Prevent the browser’s default save action
+    handlePenClick();
+  });
+
+  useHotkeys("e", (event) => {
+    event.preventDefault(); // Prevent the browser’s default save action
+    handleEraserClick();
+  });
   const handleExportImage = () => {
     canvasRef.current?.exportImage("png").then((data) => {
       console.log(data);
@@ -53,6 +75,7 @@ const Sketch: React.FC = () => {
   const handleRedoClick = () => {
     canvasRef.current?.redo();
   };
+
   const location = useLocation();
   let prompt = location.state?.prompt;
   if (prompt) {
@@ -125,15 +148,14 @@ const Sketch: React.FC = () => {
       </div>
       <div className="flex flex-col items-center justify-around gap-[4%] w-full p-[2%] py-[3%]">
         {prompt && <h1 className="font-header text-2xl text-drawn-white">Prompt: {prompt}</h1>}
-        <div className="w-full h-full">
-          <ReactSketchCanvas
-            ref={canvasRef}
-            strokeColor={strokeColor}
-            canvasColor={canvasColor}
-            strokeWidth={strokeWidth}
-            eraserWidth={eraserWidth}
-          />
-        </div>
+        <ReactSketchCanvas
+          svgStyle={{ cursor: "url(/external/cursors/cursor.cur), auto" }}
+          ref={canvasRef}
+          strokeColor={strokeColor}
+          canvasColor={canvasColor}
+          strokeWidth={strokeWidth}
+          eraserWidth={eraserWidth}
+        />
       </div>
     </div>
   );

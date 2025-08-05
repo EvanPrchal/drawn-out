@@ -9,9 +9,9 @@ const Profile = () => {
           <img src="/external/images/biteof87.jpg" className="max-w-[15%] max-h-[15%] rounded-full self-center" />
 
           <h1 className="text-header font-header flex self-center">Username</h1>
-          <section className="justify-around text-subheader font-header flex bg-[#D9D9D9]">
-            <h2>Posts</h2>
-            <h2>Drafts</h2>
+          <section className="justify-around text-subheader font-header flex ">
+            <h2 className="bg-[#D9D9D9]">Posts</h2>
+            <h2 className="bg-[#D9D9D9]">Drafts</h2>
           </section>
         </div>
       </div>
