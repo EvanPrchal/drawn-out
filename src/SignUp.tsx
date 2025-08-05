@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Button from "./Components/Button";
 import { Link } from "react-router-dom";
@@ -6,8 +7,11 @@ const SignUp: React.FC = () => {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
+
   const handleSubmit = () => {
-    alert(`Username is: ${user}\nPassword is: ${password}`);
+    alert(`Account Created! Username is: ${user}`);
+    navigate(`/login`);
   };
   return (
     <div className="bg-drawn-white flex flex-col justify-center items-center p-[5%] h-full">

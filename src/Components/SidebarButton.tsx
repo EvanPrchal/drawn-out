@@ -13,8 +13,7 @@ let signedIn = false;
 const SidebarButton: React.FC<SidebarButtonProps> = ({ link, svg, title }) => {
   if (link === "profile")
     if (signedIn === false) {
-      link = "signup";
-      console.log("pp");
+      link = "login";
     }
   return (
     <section

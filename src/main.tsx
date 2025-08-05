@@ -15,6 +15,7 @@ import Hard from "./Hard.tsx";
 import Settings from "./Settings.tsx";
 import Gallery from "./Gallery.tsx";
 import SignUp from "./SignUp.tsx";
+import Saved from "./Saved.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -32,6 +33,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/prompts/hard" element={<Hard />}></Route>
         <Route path="/sketch" element={<Sketch />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/saved" element={<Saved />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>

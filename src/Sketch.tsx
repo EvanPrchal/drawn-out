@@ -138,11 +138,16 @@ const Sketch: React.FC = () => {
             <input type="image" src="/redo.svg" className="btn btn-sm btn-outline-primary" onClick={handleRedoClick}></input>
           </section>
         </section>
-        <section className="flex h-full gap-5">
+        <section className="flex flex-col h-full gap-5 items-center font-body text-2xl">
+          <p>Color</p>
           <input type="color" className="w-full h-full hover:cursor-pointer" value={strokeColor} onChange={handleStrokeColorChange} />
+          <p>Canvas</p>
           <input type="color" className="w-full h-full hover:cursor-pointer" value={canvasColor} onChange={handleCanvasColorChange} />
         </section>
-        <button className="bg-drawn-black rounded-full text-drawn-white m-[5%] w-[50%] self-center hover:cursor-pointer" onClick={handleExportImage}>
+        <button
+          className="bg-drawn-black rounded-full text-drawn-white m-[5%] w-[50%] self-center hover:cursor-pointer font-body text-2xl mt-[15%]"
+          onClick={handleExportImage}
+        >
           Export
         </button>
       </div>
