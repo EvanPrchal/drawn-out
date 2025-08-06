@@ -18,21 +18,21 @@ const SidebarButton: React.FC<SidebarButtonProps> = ({ link, svg, title }) => {
   return (
     <section
       onClick={closeNav}
-      className={`flex text-drawn-white  border-drawn-white text-body font-sidebar hover:bg-drawn-cyan hover:text-drawn-black group`}
+      className={`flex grow-0 text-drawn-white justify-center items-center w-full border-drawn-white text-body font-sidebar hover:bg-drawn-cyan hover:text-drawn-black group`}
     >
       {link ? (
-        <Link to={link}>
-          <div className="flex p-4 w-full">
+        <Link to={link} className="w-full  flex">
+          <div className="flex p-4 w-full items-center">
             <img src={`/light-${svg}`} className="w-20 group-hover:hidden" />
             <img src={`/dark-${svg}`} className="w-20 hidden group-hover:block" />
-            <p className="pl-[10%]">{title}</p>
+            <p className="pl-[10%] justify-center">{title}</p>
           </div>
         </Link>
       ) : (
-        <div className="flex p-4 w-full">
-          <img src={`/light-${svg}`} className="w-20 group-hover:hidden" />
-          <img src={`/dark-${svg}`} className="w-20 hidden group-hover:block" />
-          <p className="pl-[10%]">{title}</p>
+        <div className="flex p-4 w-full items-center">
+          <img src={`/light-${svg}`} className="w-[20%] group-hover:hidden" />
+          <img src={`/dark-${svg}`} className="w-[20%] hidden group-hover:block" />
+          <p className="pl-[10%] flex justify-center">{title}</p>
         </div>
       )}
     </section>

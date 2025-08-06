@@ -8,16 +8,20 @@ const Login: React.FC = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
-    alert(`Successfully logged in!`);
-    navigate(`/profile`);
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    alert("Succesfully logged in!");
+    console.log(user);
+    navigate("/profile", { state: { user } });
   };
+
   return (
     <div className="bg-drawn-white flex flex-col justify-center items-center p-[5%] h-full">
       <h1 className="text-header font-header text-drawn-magenta">Welcome to DrawnOut!</h1>
       <h2 className="text-[40px] font-header text-drawn-magenta mb-[2%]">Please log in to continue</h2>
       <form onSubmit={handleSubmit} className="flex flex-col text-[40px] gap-7">
         <input
+          id="loginUsername"
           type="text"
           onChange={(e) => setUser(e.target.value)}
           placeholder="USERNAME"
@@ -25,6 +29,7 @@ const Login: React.FC = () => {
           required
         />
         <input
+          id="loginPassword"
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           placeholder="PASSWORD"

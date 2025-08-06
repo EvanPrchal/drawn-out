@@ -6,7 +6,7 @@ const Sidebar = () => {
     <>
       <div
         id="mySidenav"
-        className="h-full w-0 fixed top-0 left-0 bg-drawn-bg overflow-x-hidden flex flex-col justify-center border-1 border-drawn-white z-1 ease-in-out duration-500"
+        className="h-full w-0 fixed top-0 left-0 bg-drawn-bg overflow-x-hidden flex flex-col justify-center border-x-1 border-drawn-white z-1 ease-in-out duration-500"
       >
         <div className="flex flex-col justify-between bg-drawn-black">
           <hr className="text-drawn-white"></hr>

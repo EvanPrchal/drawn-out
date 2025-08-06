@@ -13,11 +13,9 @@ const Navbar = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     navigate(`/${search}`);
-    // or you can send data to backend
   };
 
   const handleKeypress = (e: any) => {
-    //it triggers by pressing the enter key
     if (e.keyCode === 13) {
       handleSubmit(e);
     }

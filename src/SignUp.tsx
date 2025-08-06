@@ -9,7 +9,8 @@ const SignUp: React.FC = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
     alert(`Account Created! Username is: ${user}`);
     navigate(`/login`);
   };
@@ -19,6 +20,7 @@ const SignUp: React.FC = () => {
       <h2 className="text-[40px] font-header text-drawn-magenta mb-[2%]">Please create an account to continue</h2>
       <form onSubmit={handleSubmit} className="flex flex-col text-[40px] gap-7">
         <input
+          id="email"
           type="text"
           onChange={(e) => setEmail(e.target.value)}
           placeholder="EMAIL"
@@ -26,6 +28,7 @@ const SignUp: React.FC = () => {
           required
         />
         <input
+          id="username"
           type="text"
           onChange={(e) => setUser(e.target.value)}
           placeholder="USERNAME"
@@ -33,6 +36,7 @@ const SignUp: React.FC = () => {
           required
         />
         <input
+          id="password"
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           placeholder="PASSWORD"

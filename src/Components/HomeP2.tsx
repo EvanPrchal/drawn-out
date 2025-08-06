@@ -17,7 +17,7 @@ const HomeP2: React.FC<HomeP2Props> = ({ logoColor }) => {
       <div className="flex flex-col items-center bg-drawn-black text-drawn-white w-[80%] p-[7.5%]">
         <div className="flex flex-col items-center justify-center w-full">
           <img
-            src="/external/images/fillerimg.png"
+            src="/external/images/myart.webp"
             alt="WOW LOOK COOL ART WOOOOOW!!!1"
             className="text-header font-header text-[#211730] text-center w-full"
           ></img>

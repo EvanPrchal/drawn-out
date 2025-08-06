@@ -4,7 +4,24 @@ import Logo from "./Logo";
 type HomeP1Props = {
   logoColor: string;
 };
+
+type homeImage = {
+  url: string;
+  author: string;
+};
+
+const images: homeImage[] = [
+  { url: "biteof87.jpg", author: "lilalienz4ever" },
+  { url: "gachi.webp", author: "Kei Urana" },
+  { url: "jotaro.webp", author: "Saviago" },
+  { url: "pilgrim.webp", author: "(Shida (羊歯)" },
+  { url: "pun.webp", author: "Inio Asano" },
+  { url: "pyan.webp", author: "Pyanyasha" },
+];
+
 const HomeP1: React.FC<HomeP1Props> = ({ logoColor }) => {
+  const randomNum = Math.floor(Math.random() * (images.length - 0)) + 0;
+
   return (
     <div className="bg-drawn-bg h-screen">
       <div className="m-[7%]">
@@ -39,12 +56,12 @@ const HomeP1: React.FC<HomeP1Props> = ({ logoColor }) => {
             </section>
           </section>
           <img
-            src="/external/images/fillerimg.png"
+            src={`/external/images/${images[randomNum].url}`}
             alt="WOW LOOK COOL ART WOOOOOW!!!1"
-            className="text-header font-header text-[#211730] text-center lg:max-w-[50%]"
+            className="text-header font-header text-[#211730] text-center max-w-[50%] max-h-170"
           ></img>
         </div>
-        <p className="text-body font-body italic text-drawn-white flex justify-end">Artist Credit</p>
+        <p className="text-body font-body italic text-drawn-white flex justify-end">{images[randomNum].author}</p>
       </div>
     </div>
   );
