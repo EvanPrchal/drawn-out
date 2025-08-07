@@ -41,9 +41,9 @@ const Gallery: React.FC = () => {
     const url: string = "http://localhost:8000/gallery";
 
     const payload: createArtRequest = {
-      img_url: "/external/images/fillerimg.png",
-      title: "TestPost",
-      description: "Testing if image posting works",
+      img_url: "/external/images/chloe.webp",
+      title: "Chloe",
+      description: "my cat :>",
       author: "Evan",
     };
 
